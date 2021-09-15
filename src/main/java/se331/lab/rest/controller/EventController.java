@@ -25,7 +25,8 @@ public class EventController {
     @GetMapping("events")
     public ResponseEntity<?> getEventLists(@RequestParam(value = "_limit", required = false) Integer perPage
             , @RequestParam(value = "_page", required = false) Integer page
-            , @RequestParam(value = "title" , required = false) String title) {
+            , @RequestParam(value = "title" , required = false) String title
+    , @RequestParam(value = "description" , required = false) String description)  {
         perPage = perPage == null ? 3 : perPage;
         page = page == null ? 1 : page;
         Page<Event> pageOutput;
